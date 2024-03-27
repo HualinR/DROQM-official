@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin-top: 50px; /* Add margin at the top */
+            padding: 80;
+            # background-color: #f5f5f5;
+            text-align: center; /* Center align all elements */
+            height: 100vh; /* Make the body take up the full height of the viewport */
+        }
+        .container {
+            max-width: 1200px; /* Adjust as needed */
+            padding: 15px;
+            box-sizing: border-box;
+            text-align: center; /* Center align all content */
+            margin: 0 auto; /* Centers the container horizontally */
+        }
+        h1 {
+            margin-top: 50px; /* Add margin at the top */
+            font-size: 32px;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 22px;
+        }
+        .author {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 10px; /* Reduce space between audio elements */
+        }
+        .paper-link {
+            font-size: 18px;
+            text-decoration: none;
+            color: blue;
+        }
+        .paper-link:hover {
+            text-decoration: underline;
+            margin-bottom: 10px; /* Reduce space between audio elements */
+        }
+
+        .paragraph {
+            margin: 20px auto 0; /* Set margin: top 20px, right and left auto (to center), bottom 0 */
+            text-align: justify; /* Justify the text within the paragraph */
+        }
+
+        audio {
+            width: 100%;
+            margin-bottom: 10px; /* Reduce space between audio elements */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            front-size: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            width: calc(100% / 8); /* 8 columns, each occupying 1/8 (12.5%) of the table width */
+        }
+        #th {
+        #    background-color: #f2f2f2;
+        #    # width: 80px; /* Set fixed width for the first column */
+        #}
+        /* Set even widths for the rest of the columns */
+        #th:not(:first-child),td:not(:first-child) {
+        #    # width: calc((100% - 80px) / 7); /* Calculate width for the remaining 7 columns */
+        #}
+        #th:first-child, td:first-child {
+        #    width: 80px; /* Set fixed width for the first column */
+        #}
+         
+
+        .horizontal-line {
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            margin-top: 20px; /* Adjust as needed */
+            margin-bottom: 20px; /* Adjust as needed */
+        }
+        
+
+        .graph-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 300px; /* Set a fixed height for the graph containers */
+        }
+
+		.graph {
+		    border: 1px solid rgba(0, 0, 0, 0); /* Transparent border */
+		    box-sizing: border-box;
+		    max-width: 48%; /* Limit maximum width to prevent overlap */
+		    max-height: 100%; /* Ensure graph fits within container height */
+		}
+        
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Towards An Objective Quality Metric for Interpolated Directional Room Impulse Responses</h1>
+    <div class="author">Hualin Ren, Christian Ritz, Jiahong Zhao, Daeyoung Jang</div>
+    <a href="link_to_paper.pdf" class="paper-link">Download Paper</a>
+    
+    
+    <p class="paragraph">
+        This paper introduces a novel objective quality metric for predicting the impact on Listening Quality (LQ) and Localisation Accuracy (LA) of interpolated Directional Room Impulse Responses (DRIRs). The DRIRs in this paper are First Order Ambisonic (FOA) representations of the RIR. Interpolation is used to synthesise a DRIR at a new listening position using known DRIRs at neighbouring listening positions. The target application is spatial audio synthesis for Virtual Reality (VR) that adapts to the position of the listener. The LQ and LA scores are based on the Pearson's Correlation Coefficient (PCC), comparing segments of reference and synthesised DRIRs. These scores compare well with results from other representative objective measures of Ambisonic audio quality using DRIRs convolved with sound sources. A benefit of the proposed approach is predicting the impact on spatial audio quality when using interpolated DRIRs.
+    </p>
+    
+
+    <h2>Audio Demos</h2>
+    
+    <p class="paragraph">
+		Condition A
+    </p>
+    
+    <div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Audio Name</th>
+                <th>Ground Truth</th>
+                <th>Anchor</th>
+                <th>Minimum-Phase Interpolation</th>
+                <th>Decomposed Linear Interpolation</th>
+                <th>Regularised Least-Squares Interpolation </th>
+                <th>Weighted Linear Interpolation </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Music A</td>
+                <td><audio controls><source src="Audio demos/exp1_gt_intp_InRg_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_anchor_intp_InRg_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Tho_intp_InRg_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Xg_intp_InRg_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Tk_intp_InRg_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Sthn_intp_InRg_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+                <td>Music B</td>
+                <td><audio controls><source src="Audio demos/exp1_gt_intp_InRg_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_anchor_intp_InRg_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Tho_intp_InRg_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Xg_intp_InRg_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Tk_intp_InRg_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_anchor_intp_InRg_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+                <td>Speech Female</td>
+                <td><audio controls><source src="Audio demos/exp1_gt_intp_InRg_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_anchor_intp_InRg_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Tho_intp_InRg_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Xg_intp_InRg_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Tk_intp_InRg_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Sthn_intp_InRg_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+           </tr>
+            <tr>
+                <td>Speech Male</td>
+                <td><audio controls><source src="Audio demos/exp1_gt_intp_InRg_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_anchor_intp_InRg_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Tho_intp_InRg_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Xg_intp_InRg_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Tk_intp_InRg_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/exp1_Sthn_intp_InRg_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    
+    <p class="paragraph">
+		Condition B
+    </p>
+
+    <div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Audio Name</th>
+                <th>Ground Truth</th>
+                <th>Anchor</th>
+                <th>Minimum-Phase Interpolation</th>
+                <th>Decomposed Linear Interpolation</th>
+                <th>Regularised Least-Squares Interpolation </th>
+                <th>Weighted Linear Interpolation </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Music A</td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+                <td>Music B</td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+                <td>Speech A</td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+           </tr>
+            <tr>
+                <td>Speech B</td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+            </tr>
+        </tbody>
+    </table>
+	</div>
+	
+	
+	
+	<p class="paragraph">
+		Condition C
+    </p>
+
+    <div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Audio Name</th>
+                <th>Ground Truth</th>
+                <th>Anchor</th>
+                <th>Minimum-Phase Interpolation</th>
+                <th>Decomposed Linear Interpolation</th>
+                <th>Regularised Least-Squares Interpolation </th>
+                <th>Weighted Linear Interpolation </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Music A</td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+                <td>Music B</td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+                <td>Speech A</td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+           </tr>
+            <tr>
+                <td>Speech B</td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+            </tr>
+        </tbody>
+    </table>
+	
+	
+        <!-- Blank space -->
+        <div style="height: 100px;"></div>
+
+
+        <!-- Horizontal black line -->
+        <div class="horizontal-line"></div>
+
+        <!-- Graphs -->
+        <div class="graph-container">
+            <div class="graph">
+                <img src="Doc/ETRI-logo.jpg" alt="Graph 1" style="width: 100%; height: 100%;">
+            </div>
+            <div class="graph">
+                <img src="Doc/UOW-logo.png" alt="Graph 2" style="width: 100%; height: 100%;">
+            </div>
+        </div>
+
+	<!-- Blank space -->
+        <div style="height: 100px;"></div>
+	    
+	<!-- Copyright -->
+        <div class="copyright">? December 2023</div>
+    </div>
+	    
+</body>
+</html>
