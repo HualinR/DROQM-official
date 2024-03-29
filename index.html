@@ -65,31 +65,14 @@
             text-align: center;
             width: calc(100% / 7); /*7 columns, each occupying 1/7 (12.5%) of the table width */
         }
-        #th {
-        #    background-color: #f2f2f2;
-        #    # width: 80px; /* Set fixed width for the first column */
-        #}
-        /* Set even widths for the rest of the columns */
-        #th:not(:first-child),td:not(:first-child) {
-        #    # width: calc((100% - 80px) / 6); /* Calculate width for the remaining 7 columns */
-        #}
-        #th:first-child, td:first-child {
-        #    width: 80px; /* Set fixed width for the first column */
-        #}
-         
-        .graph-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            height: 300px; /* Set a fixed height for the graph containers */
+        
+        .svg-container {
+            display: flex; /* Use flexbox layout */
         }
-
-	.graph {
-	    border: 1px solid rgba(0, 0, 0, 0); /* Transparent border */
-	    box-sizing: border-box;
-	    max-width: 48%; /* Limit maximum width to prevent overlap */
-	    max-height: 100%; /* Ensure graph fits within container height */
-	}
+        .svg-container img {
+            width: 50%; /* Each SVG takes 50% of the container's width */
+            height: auto; /* Maintain aspect ratio */
+        }
     </style>
 </head>
 <body>
@@ -109,15 +92,12 @@
     <!-- Blank space -->
     <div style="height: 50px;"></div>	    
     
-    <!-- Graphs -->
-    <!-- Embedding SVG using the img tag -->
-    <div class="graph-container">
-            <div class="graph">
-		<img src="Docs/Classroom.svg" alt="SVG Example" style="width: 100%; height: 100%;>	
-            </div>
-            <div class="graph">
-		<img src="Docs/GreatHall.svg" alt="SVG Example" style="width: 100%; height: 100%;>	
-            </div>
+    <div class="svg-container">
+        <!-- First SVG -->
+        <img src="path/to/your/first/svg/file.svg" alt="First SVG">
+    
+        <!-- Second SVG -->
+        <img src="path/to/your/second/svg/file.svg" alt="Second SVG">
     </div>
 			
     <!-- Blank space -->
