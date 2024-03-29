@@ -68,11 +68,16 @@
         
         .svg-container {
             display: flex; /* Use flexbox layout */
-            # flex-direction: column; /* Stack items vertically */
-            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            gap: 20px; /* Add some space between figures */
         }
-        .svg-container img {
-            width: 50%; /* Each SVG takes 50% of the container's width */
+        .svg-container figure {
+            flex: 1; /* Each figure takes equal space */
+            text-align: center; /* Center content horizontally */
+        }
+        .svg-container svg {
+            max-width: 100%; /* Ensure SVGs don't exceed container width */
             height: auto; /* Maintain aspect ratio */
         }
     </style>
