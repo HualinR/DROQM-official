@@ -63,7 +63,7 @@
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
-            width: calc(100% / 8); /* 8 columns, each occupying 1/8 (12.5%) of the table width */
+            width: calc(100% / 7); /*7 columns, each occupying 1/7 (12.5%) of the table width */
         }
         #th {
         #    background-color: #f2f2f2;
@@ -71,7 +71,7 @@
         #}
         /* Set even widths for the rest of the columns */
         #th:not(:first-child),td:not(:first-child) {
-        #    # width: calc((100% - 80px) / 7); /* Calculate width for the remaining 7 columns */
+        #    # width: calc((100% - 80px) / 6); /* Calculate width for the remaining 7 columns */
         #}
         #th:first-child, td:first-child {
         #    width: 80px; /* Set fixed width for the first column */
@@ -86,20 +86,6 @@
             margin-bottom: 20px; /* Adjust as needed */
         }
         
-
-        .graph-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            height: 300px; /* Set a fixed height for the graph containers */
-        }
-
-		.graph {
-		    border: 1px solid rgba(0, 0, 0, 0); /* Transparent border */
-		    box-sizing: border-box;
-		    max-width: 48%; /* Limit maximum width to prevent overlap */
-		    max-height: 100%; /* Ensure graph fits within container height */
-		}
         
     </style>
 </head>
@@ -118,7 +104,7 @@
     <h2>Audio Demos</h2>
     
     <p class="paragraph">
-		Condition A
+		Condition A in the Great Hall, the distance between interpolated DRIR and known DRIR is 1m
     </p>
     
     <div class="container">
@@ -127,7 +113,6 @@
             <tr>
                 <th>Audio Name</th>
                 <th>Ground Truth</th>
-                <th>Anchor</th>
                 <th>Minimum-Phase Interpolation</th>
                 <th>Decomposed Linear Interpolation</th>
                 <th>Regularised Least-Squares Interpolation </th>
@@ -136,98 +121,79 @@
         </thead>
         <tbody>
             <tr>
-                <td>Music A</td>
-                <td><audio controls><source src="Audio demos/exp1_gt_intp_InRg_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_anchor_intp_InRg_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Tho_intp_InRg_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Xg_intp_InRg_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Tk_intp_InRg_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Sthn_intp_InRg_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td>Music - A</td>
+                <td><audio controls><source src="Audio demos/CondA_gt_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_Tho_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_Xg_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_Tk_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_St_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-                <td>Music B</td>
-                <td><audio controls><source src="Audio demos/exp1_gt_intp_InRg_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_anchor_intp_InRg_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Tho_intp_InRg_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Xg_intp_InRg_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Tk_intp_InRg_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_anchor_intp_InRg_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td>Music - B</td>
+                <td><audio controls><source src="Audio demos/CondA_gt_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_Tho_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_Xg_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_Tk_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_St_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-                <td>Speech Female</td>
-                <td><audio controls><source src="Audio demos/exp1_gt_intp_InRg_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_anchor_intp_InRg_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Tho_intp_InRg_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Xg_intp_InRg_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Tk_intp_InRg_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Sthn_intp_InRg_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td>Speech - Female</td>
+                <td><audio controls><source src="Audio demos/CondA_gt_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_Tho_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_Xg_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_Tk_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_St_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
            </tr>
             <tr>
-                <td>Speech Male</td>
-                <td><audio controls><source src="Audio demos/exp1_gt_intp_InRg_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_anchor_intp_InRg_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Tho_intp_InRg_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Xg_intp_InRg_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Tk_intp_InRg_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="Audio demos/exp1_Sthn_intp_InRg_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td>Speech - Male</td>
+                <td><audio controls><source src="Audio demos/CondA_gt_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_Tho_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_Xg_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_Tk_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondA_St_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
             </tr>
         </tbody>
     </table>
     </div>
     
     <p class="paragraph">
-		Condition B
+		Condition B in the classroom, the distance between interpolated DRIR and known DRIR is 1m
     </p>
 
     <div class="container">
     <table>
         <thead>
             <tr>
-                <th>Audio Name</th>
-                <th>Ground Truth</th>
-                <th>Anchor</th>
-                <th>Minimum-Phase Interpolation</th>
-                <th>Decomposed Linear Interpolation</th>
-                <th>Regularised Least-Squares Interpolation </th>
-                <th>Weighted Linear Interpolation </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Music A</td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td>Music - A</td>
+                <td><audio controls><source src="Audio demos/CondB_gt_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_Tho_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_Xg_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_Tk_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_St_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-                <td>Music B</td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td>Music - B</td>
+                <td><audio controls><source src="Audio demos/CondB_gt_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_Tho_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_Xg_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_Tk_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_St_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-                <td>Speech A</td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td>Speech - Female</td>
+                <td><audio controls><source src="Audio demos/CondB_gt_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_Tho_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_Xg_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_Tk_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_St_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
            </tr>
             <tr>
-                <td>Speech B</td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td>Speech - Male</td>
+                <td><audio controls><source src="Audio demos/CondB_gt_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_Tho_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_Xg_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_Tk_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondB_St_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
             </tr>
         </tbody>
     </table>
@@ -236,58 +202,43 @@
 	
 	
 	<p class="paragraph">
-		Condition C
+		Condition C in the Great Hall, the distance between interpolated DRIR and known DRIR is 3m
     </p>
 
     <div class="container">
     <table>
         <thead>
             <tr>
-                <th>Audio Name</th>
-                <th>Ground Truth</th>
-                <th>Anchor</th>
-                <th>Minimum-Phase Interpolation</th>
-                <th>Decomposed Linear Interpolation</th>
-                <th>Regularised Least-Squares Interpolation </th>
-                <th>Weighted Linear Interpolation </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Music A</td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td>Music - A</td>
+                <td><audio controls><source src="Audio demos/CondC_gt_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_Tho_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_Xg_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_Tk_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_St_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-                <td>Music B</td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td>Music - B</td>
+                <td><audio controls><source src="Audio demos/CondC_gt_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_Tho_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_Xg_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_Tk_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_St_Great_muD_conv48_Headphone.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-                <td>Speech A</td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td>Speech - Female</td>
+                <td><audio controls><source src="Audio demos/CondC_gt_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_Tho_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_Xg_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_Tk_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_St_Great_spF_conv48_Headphone.wav" type="audio/wav"></audio></td>
            </tr>
             <tr>
-                <td>Speech B</td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
-                <td><audio controls><source src="audio/example1.wav" type="audio/wav"></audio></td>
+                <td>Speech - Male</td>
+                <td><audio controls><source src="Audio demos/CondC_gt_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_Tho_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_Xg_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_Tk_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
+                <td><audio controls><source src="Audio demos/CondC_St_Great_spM_conv48_Headphone.wav" type="audio/wav"></audio></td>
             </tr>
         </tbody>
     </table>
@@ -299,19 +250,6 @@
 
         <!-- Horizontal black line -->
         <div class="horizontal-line"></div>
-
-        <!-- Graphs -->
-        <div class="graph-container">
-            <div class="graph">
-                <img src="Docs/ETRI-logo.jpg" alt="Graph 1" style="width: 100%; height: 100%;">
-            </div>
-            <div class="graph">
-                <img src="Docs/UOW-logo.png" alt="Graph 2" style="width: 100%; height: 100%;">
-            </div>
-        </div>
-
-	<!-- Blank space -->
-        <div style="height: 100px;"></div>
 	    
 	<!-- Copyright -->
         <div class="copyright">© December 2023 By Hualin Ren</div>
