@@ -68,6 +68,8 @@
         
         .svg-container {
             display: flex; /* Use flexbox layout */
+            # flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
         }
         .svg-container img {
             width: 50%; /* Each SVG takes 50% of the container's width */
@@ -94,10 +96,16 @@
     
     <div class="svg-container">
         <!-- First SVG -->
-        <img src="Docs/Classroom.svg" alt="First SVG">
-    
+        <figure>
+            <img src="Docs/Classroom.svg" alt="First SVG">
+            <figcaption>Classroom Layout</figcaption>
+        </figure>
+	    
         <!-- Second SVG -->
-        <img src="Docs/GreatHall.svg" alt="Second SVG">
+        <figure>
+            <img src="Docs/GreatHall.svg" alt="Second SVG">
+            <figcaption>Great Hall Layout</figcaption>
+        </figure>
     </div>
 			
     <!-- Blank space -->
