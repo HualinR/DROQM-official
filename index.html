@@ -68,13 +68,15 @@
         
         .svg-container {
             display: flex; /* Use flexbox layout */
-            justify-content: center; /* Center items horizontally, can use or not*/
-            align-items: center; /* Center items vertically, can use or not*/
+            justify-content: space-around; /* Add space around items */
+            align-items: flex-start; /* Align items at the start */
             gap: 30px; /* Add some space between figures */
         }
         .svg-container figure {
-            flex: 1; /* Each figure takes equal space */
             text-align: center; /* Center content horizontally */
+            display: flex; /* Use flexbox layout for figure content */
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center content vertically */
         }
         .svg-container img {
             width: 100%; /* Ensure SVGs don't exceed container width */
@@ -182,6 +184,16 @@
     <table>
         <thead>
             <tr>
+                <th>Audio Name</th>
+                <th>Ground Truth</th>
+                <th>Minimum-Phase Interpolation</th>
+                <th>Decomposed Linear Interpolation</th>
+                <th>Regularised Least-Squares Interpolation </th>
+                <th>Weighted Linear Interpolation </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
                 <td>Music - A</td>
                 <td><audio controls><source src="Audio demos/CondB_gt_Class_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
                 <td><audio controls><source src="Audio demos/CondB_Tho_Class_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
@@ -227,6 +239,16 @@
     <div class="container">
     <table>
         <thead>
+            <tr>
+                <th>Audio Name</th>
+                <th>Ground Truth</th>
+                <th>Minimum-Phase Interpolation</th>
+                <th>Decomposed Linear Interpolation</th>
+                <th>Regularised Least-Squares Interpolation </th>
+                <th>Weighted Linear Interpolation </th>
+            </tr>
+        </thead>
+        <tbody>
             <tr>
                 <td>Music - A</td>
                 <td><audio controls><source src="Audio demos/CondC_gt_Great_muA_conv48_Headphone.wav" type="audio/wav"></audio></td>
