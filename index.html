@@ -77,16 +77,28 @@
         #    width: 80px; /* Set fixed width for the first column */
         #}
          
-        
+        .graph-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 300px; /* Set a fixed height for the graph containers */
+        }
+
+	.graph {
+	    border: 1px solid rgba(0, 0, 0, 0); /* Transparent border */
+	    box-sizing: border-box;
+	    max-width: 48%; /* Limit maximum width to prevent overlap */
+	    max-height: 100%; /* Ensure graph fits within container height */
+	}
     </style>
 </head>
 <body>
 <div class="container">
     <h1>Towards An Objective Quality Metric for Interpolated Directional Room Impulse Responses</h1>
-    <div class="author">Hualin Ren<sup>1</sup><br/>, Christian Ritz<sup>1</sup><br/>, Jiahong Zhao<sup>2</sup><br/>, Daeyoung Jang<sup>3</sup><br/></div>
-    <div class="author"><sup>1</sup><br/>University of Wollongong, Wollongong, Australia</div>
-    <div class="author"><sup>2</sup><br/>University of Southampton, Hampshire, UK</div>
-    <div class="author"><sup>3</sup><br/>Electronics and Telecommunications Research Institute (ETRI), Daejeon, Korea</div>
+    <div class="author">Hualin Ren<sup>1</sup>, Christian Ritz<sup>1</sup>, Jiahong Zhao<sup>1, 2</sup>, Daeyoung Jang<sup>3</sup></div>
+    <div class="author"><sup>1</sup>University of Wollongong, Wollongong, Australia</div>
+    <div class="author"><sup>2</sup>University of Southampton, Hampshire, UK</div>
+    <div class="author"><sup>3</sup>Electronics and Telecommunications Research Institute (ETRI), Daejeon, Korea</div>
     <a href="link_to_paper.pdf" class="paper-link">Download Paper</a>
     
     
@@ -95,9 +107,22 @@
     </p>
     
     <!-- Blank space -->
-    <div style="height: 100px;"></div>
-					    
-
+    <div style="height: 50px;"></div>	    
+    
+    <!-- Graphs -->
+    <!-- Embedding SVG using the img tag -->
+    <div class="graph-container">
+            <div class="graph">
+		<img src="Docs/Classroom.svg" alt="SVG Example" style="width: 100%; height: 100%;>	
+            </div>
+            <div class="graph">
+		<img src="Docs/GreatHall.svg" alt="SVG Example" style="width: 100%; height: 100%;>	
+            </div>
+    </div>
+			
+    <!-- Blank space -->
+    <div style="height: 50px;"></div>	   	
+	
     <h2>Audio Demos</h2>
     
     <p class="paragraph">
@@ -154,7 +179,7 @@
     </div>
 
     <!-- Blank space -->
-    <div style="height: 100px;"></div>
+    <div style="height: 50px;"></div>
 	
     <p class="paragraph">
 		Condition B in the classroom, the distance between interpolated DRIR and known DRIRs is 1m.
@@ -200,7 +225,7 @@
 	</div>
 	
     <!-- Blank space -->
-    <div style="height: 100px;"></div>
+    <div style="height: 50px;"></div>
 	
 	<p class="paragraph">
 		Condition C in the Great Hall, the distance between interpolated DRIR and known DRIRs is 3m.
